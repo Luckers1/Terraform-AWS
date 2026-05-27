@@ -41,7 +41,7 @@ Após o provisionamento, o Ansible configura a EC2 com:
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/Terraform-AWS.git
+git clone https://github.com/Luckers1/Terraform-AWS.git
 cd Terraform-AWS
 ```
 
