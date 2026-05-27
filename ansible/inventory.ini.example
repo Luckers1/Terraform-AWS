@@ -1,0 +1,8 @@
+# Copie este arquivo para inventory.ini e substitua pelos valores reais
+# cp ansible/inventory.ini.example ansible/inventory.ini
+#
+# ATENÇÃO: inventory.ini está no .gitignore — nunca commitar com IPs reais.
+# O IP público da EC2 é exibido no output do terraform apply.
+
+[webservers]
+ec2-devops-lab ansible_host=<IP_PUBLICO_EC2> ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_rsa

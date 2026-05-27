@@ -1,0 +1,17 @@
+---
+- name: Cria arquivo de log local
+  copy:
+    dest: "/home/{{ usuario }}/deploy.log"
+    content: |
+      deploy_host={{ ansible_hostname }}
+      deploy_date={{ ansible_date_time.iso8601 }}
+      cloud=aws
+      configured_by=ansible
+
+- name: Envia log de deploy para o S3
+  command: >
+    aws s3 cp /home/{{ usuario }}/deploy.log
+    s3://{{ s3_bucket_name }}/logs/{{ ansible_hostname }}-deploy.log
+  environment:
+    AWS_DEFAULT_REGION: "us-east-1"
+  ignore_errors: yes

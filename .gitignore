@@ -1,0 +1,48 @@
+# ============================================================
+# Terraform
+# ============================================================
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+!*.tfvars.example
+*.tfplan
+*.plan
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ============================================================
+# Ansible
+# ============================================================
+ansible/inventory.ini
+!ansible/inventory.ini.example
+*.vault
+.vault_pass
+vault_password_file
+ansible/.ansible/
+*.retry
+
+# ============================================================
+# SSH / Credenciais AWS
+# ============================================================
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+.aws/
+credentials
+
+# ============================================================
+# Sistema operacional
+# ============================================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

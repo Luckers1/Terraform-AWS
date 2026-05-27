@@ -1,0 +1,10 @@
+---
+- name: Atualiza lista de pacotes
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Instala pacotes essenciais
+  apt:
+    name: [git, curl, wget, htop, unzip, awscli]
+    state: present

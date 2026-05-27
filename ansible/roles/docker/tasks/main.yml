@@ -1,0 +1,33 @@
+---
+- name: Instala dependências do Docker
+  apt:
+    name: [apt-transport-https, ca-certificates, gnupg, lsb-release]
+    state: present
+
+- name: Adiciona chave GPG do Docker
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Adiciona repositório do Docker
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
+    state: present
+
+- name: Instala Docker
+  apt:
+    name: [docker-ce, docker-ce-cli, containerd.io]
+    state: present
+    update_cache: yes
+
+- name: Adiciona usuário ao grupo docker
+  user:
+    name: "{{ usuario }}"
+    groups: docker
+    append: yes
+
+- name: Garante que o Docker está rodando
+  service:
+    name: docker
+    state: started
+    enabled: yes

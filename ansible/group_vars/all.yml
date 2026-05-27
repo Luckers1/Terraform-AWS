@@ -1,0 +1,4 @@
+---
+usuario: ubuntu
+mensagem_boas_vindas: "EC2 configurada via Ansible — AWS Homelab DevOps!"
+s3_bucket_name: "homelab-assets-devops"

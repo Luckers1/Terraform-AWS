@@ -1,0 +1,16 @@
+---
+- name: Configuração da EC2 — Homelab DevOps AWS
+  hosts: all
+  become: true
+
+  roles:
+    - common
+    - docker
+    - nginx
+    - s3_notify
+
+  tasks:
+    - name: Registro final de configuração
+      copy:
+        dest: "/home/{{ usuario }}/setup_complete.txt"
+        content: "Setup AWS finalizado em {{ ansible_date_time.date }}"
