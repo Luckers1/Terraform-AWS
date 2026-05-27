@@ -14,8 +14,8 @@ AWS (us-east-1)
     │   └── RDS PostgreSQL 16 (db.t3.micro)
     ├── Subnet Privada B (10.0.3.0/24) — AZ: us-east-1b
     │   └── RDS Subnet Group (multi-AZ obrigatório)
-    ├── Security Group: sg-ec2-web   → porta 22 (SSH) + 80 (HTTP)
-    ├── Security Group: sg-rds-postgres → porta 5432 (apenas da EC2)
+    ├── Security Group: ec2-web-sg   → porta 22 (SSH) + 80 (HTTP)
+    ├── Security Group: rds-postgres-sg → porta 5432 (apenas da EC2)
     └── S3 Bucket (privado, versionado)
 ```
 
